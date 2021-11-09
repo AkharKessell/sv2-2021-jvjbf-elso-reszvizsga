@@ -29,7 +29,7 @@ public class Car {
         return price;
     }
 
-    public void decreasePrice(int percent){
-        this.price = (int)(this.price* (100d-percent)/100);
+    public void decreasePrice(int percent) {
+        this.price = (int) (this.price * (100d - percent) / 100);
     }
 }

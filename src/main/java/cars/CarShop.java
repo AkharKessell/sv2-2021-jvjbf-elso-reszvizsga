@@ -13,6 +13,10 @@ public class CarShop {
         this.maxPrice = maxFloorPrice;
     }
 
+    public List<Car> getCarsForSell() {
+        return this.cars;
+    }
+
     public boolean addCar(Car car) {
         if (car.getPrice() <= this.maxPrice) {
             this.cars.add(car);
@@ -21,9 +25,10 @@ public class CarShop {
             return false;
         }
     }
-    public int sumCarPrice(){
+
+    public int sumCarPrice() {
         int sum = 0;
-        for (Car car : cars){
+        for (Car car : this.cars) {
             sum += car.getPrice();
         }
         return sum;
@@ -31,17 +36,18 @@ public class CarShop {
 
     int numberOfCarsCheaperThan(int price) {
         int num = 0;
-        for (Car car : cars) {
+        for (Car car : this.cars) {
             if (car.getPrice() <= price) {
                 num++;
             }
         }
         return num;
     }
-    public List<Car> carsWithBrand(String brand){
+
+    public List<Car> carsWithBrand(String brand) {
         List<Car> found = new ArrayList<>();
-        for (Car car : cars){
-            if(car.getBrand().equals(brand)){
+        for (Car car : this.cars) {
+            if (car.getBrand().equals(brand)) {
                 found.add(car);
             }
         }
@@ -49,14 +55,14 @@ public class CarShop {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getMaxPrice() {
-        return maxPrice;
+        return this.maxPrice;
     }
 
     public List<Car> getCars() {
-        return cars;
+        return this.cars;
     }
 }
